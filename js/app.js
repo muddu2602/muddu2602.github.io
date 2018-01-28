@@ -34,12 +34,7 @@ function submitForm(e){
     },3000);  
 }
 
-function getValues() {
-    var root = firebase.database().ref().child('users');
-    root.on('child_added', function(snapshot) {
-      console.log(snapshot.val());
-    })
-}
+
 //Function to get Form Values
 function getInputVal(id){
     return document.getElementById(id).value;
@@ -56,3 +51,16 @@ function saveMessage(name , email , phone, status){
     });
    
 }
+
+var app = angular.module("register", ["firebase"]); 
+app.controller("registerController", function($scope, $firebaseArray) {
+    var ref = firebase.database().ref().child("users");;
+    // download the data into a local object
+    $scope.data = $firebaseArray(ref);
+    // var root = firebase.database().ref().child('users');
+    // root.on('child_added', function(snapshot) {
+    //   $scope.data.push(snapshot.val());
+    //    console.log($scope.data)
+    // })
+
+});

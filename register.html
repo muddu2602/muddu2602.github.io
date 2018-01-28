@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
     <title>Ityukta Register</title>
     <script src="https://code.angularjs.org/1.3.18/angular.min.js"></script>
-    <script src="./js/registerController.js"></script>
 </head>
 <body ng-app="register" ng-controller="registerController">
   <section class="registerForm">
@@ -56,14 +55,15 @@
               <tr>
                   <th>Name</th>
                   <th>Email</th>
-                  <th>Status</th>
+                  <th>Payment Status</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Alvin</td>
-                <td>$0.87</td>
-                <td>UnPaid</td>
+              <tr ng-repeat ="user in data">
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td ng-if="user.status">verified</td>
+                <td ng-if="!user.status">Pending</td>
               </tr>
             </tbody>
           </table>
@@ -80,5 +80,7 @@
     </script>
     <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
     <script src="./js/app.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+    
 </body>
 </html>
