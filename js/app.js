@@ -45,7 +45,6 @@ function getInputVal(id){
     return document.getElementById(id).value;
 }
 
-
 //Save messges to database
 function saveMessage(name , email , phone, status){
     var newMessageRef = user.push();

@@ -216,7 +216,7 @@ h2:after {
     opacity: 0.55;
 }
 .header-content{
-    z-index: 2;
+   
     margin-top: -100px;
 }
 .header-content li{
