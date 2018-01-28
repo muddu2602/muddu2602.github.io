@@ -23,7 +23,7 @@ function submitForm(e){
     var phone = getInputVal('phoneNo');
     var email = getInputVal('email');
     
-    saveMessage(name , email , phone);
+    saveMessage(name , email , phone, false);
 
     //Show Alert
     document.querySelector('.alert').style.display = 'block';
@@ -31,10 +31,14 @@ function submitForm(e){
     setTimeout(function(){
         document.querySelector('.alert').style.display = 'none';
         window.location="/";
-    },3000);
+    },3000);  
+}
 
-    
-    
+function getValues() {
+    var root = firebase.database().ref().child('users');
+    root.on('child_added', function(snapshot) {
+      console.log(snapshot.val());
+    })
 }
 //Function to get Form Values
 function getInputVal(id){
@@ -43,11 +47,13 @@ function getInputVal(id){
 
 
 //Save messges to database
-function saveMessage(name , email , phone){
+function saveMessage(name , email , phone, status){
     var newMessageRef = user.push();
     newMessageRef.set({
         name:name,
         email:email,
-        phone:phone
+        phone:phone,
+        status
     });
+   
 }
