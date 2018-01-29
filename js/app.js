@@ -22,8 +22,9 @@ function submitForm(e){
     var name = getInputVal('name');
     var phone = getInputVal('phoneNo');
     var email = getInputVal('email');
+    var workshop = getInputVal('workshop');
     
-    saveMessage(name , email , phone, false);
+    saveMessage(name , email , phone, false , workshop);
 
     //Show Alert
     document.querySelector('.alert').style.display = 'block';
@@ -34,31 +35,28 @@ function submitForm(e){
     },3000);  
 }
 
-
 //Function to get Form Values
 function getInputVal(id){
     return document.getElementById(id).value;
 }
 
 //Save messges to database
-function saveMessage(name , email , phone, status){
+function saveMessage(name , email , phone, status, workshop){
     var newMessageRef = user.push();
     newMessageRef.set({
         name:name,
         email:email,
         phone:phone,
-        status
+        status,
+        workshop: workshop
     });
-   
 }
-
 var app = angular.module("register", ["firebase"]); 
 app.controller("registerController", function($scope, $firebaseArray) {
     var ref = firebase.database().ref().child("users");;
     // download the data into a local object
     $scope.data = $firebaseArray(ref);
     $scope.totalAttendees=0;
-
     // var root = firebase.database().ref().child('users');
     // root.on('child_added', function(snapshot) {
     //   $scope.data.push(snapshot.val());
@@ -71,12 +69,10 @@ app.controller("registerController", function($scope, $firebaseArray) {
        // To iterate the key/value pairs of the object, use angular.forEach()
        angular.forEach($scope.data, function(value, key) {
           console.log(key, value);
-          if(value.eh)
+          if(value.workshop == 'ETH' && value.status)
             $scope.ehAttendees++
-          if(value.ibm)
+          if(value.workshop == 'IBM' && value.status)
             $scope.ibmAttendees++
-
        });
      });
-
 });
