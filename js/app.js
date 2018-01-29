@@ -47,20 +47,33 @@ function saveMessage(name , email , phone, status){
         name:name,
         email:email,
         phone:phone,
-        status
+        status:status,
+        ibm:false,
+        eh:true
     });
    
 }
 
 var app = angular.module("register", ["firebase"]); 
 app.controller("registerController", function($scope, $firebaseArray) {
-    var ref = firebase.database().ref().child("users");;
-    // download the data into a local object
+    var ref = firebase.database().ref().child("users");
+    $scope.totalAttendees=0;
+
     $scope.data = $firebaseArray(ref);
-    // var root = firebase.database().ref().child('users');
-    // root.on('child_added', function(snapshot) {
-    //   $scope.data.push(snapshot.val());
-    //    console.log($scope.data)
-    // })
+
+    $scope.data.$loaded().then(function() {
+        $scope.totalAttendees=$scope.data.length
+        $scope.ehAttendees=0
+        $scope.ibmAttendees=0;
+       // To iterate the key/value pairs of the object, use angular.forEach()
+       angular.forEach($scope.data, function(value, key) {
+          console.log(key, value);
+          if(value.eh)
+            $scope.ehAttendees++
+          if(value.ibm)
+            $scope.ibmAttendees++
+
+       });
+     });
 
 });
