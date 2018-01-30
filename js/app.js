@@ -41,6 +41,7 @@ function getInputVal(id){
 }
 
 //Save messges to database
+
 function saveMessage(name , email , phone, status, workshop){
     var newMessageRef = user.push();
     newMessageRef.set({
@@ -66,10 +67,9 @@ app.controller("registerController", function($scope, $firebaseArray) {
         $scope.totalAttendees=$scope.data.length
         $scope.ehAttendees=0
         $scope.ibmAttendees=0;
-       // To iterate the key/value pairs of the object, use angular.forEach()
+         // To iterate the key/value pairs of the object, use angular.forEach()
        angular.forEach($scope.data, function(value, key) {
-          console.log(key, value);
-          if(value.workshop == 'ETH' && value.status)
+            if(value.workshop == 'ETH' && value.status)
             $scope.ehAttendees++
           if(value.workshop == 'IBM' && value.status)
             $scope.ibmAttendees++
