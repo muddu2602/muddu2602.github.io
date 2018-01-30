@@ -71,14 +71,15 @@
       <div class="row">
         <div class=" input-field  col s5 l3 m3 offset-s7 offset-m9 offset-l9">
           <input name="search" style="color:#000" ng-model="search" type="text">
-          <label for="search"><i class="material-icons">search</i>Search</label>
+          <label for="search"><i class="material-icons wow pulse" data-wow-iterations="infinite">search</i>Search</label>
         </div>
       </div>
-        <table class="responsive-table">
+        <table class="responsive-table highlight">
             <thead>
               <tr>
                   <th>Name</th>
                   <th>Email</th>
+                  <th>Workshop</th>
                   <th>Payment Status</th>
               </tr>
             </thead>
@@ -86,6 +87,7 @@
               <tr ng-repeat ="user in data | filter : search">
                 <td>{{user.name}}</td>
                 <td>{{user.email}}</td>
+                <td>{{user.workshop}}</td>
                 <td ng-if="user.status">verified</td>
                 <td ng-if="!user.status">Pending....</td>
               </tr>
@@ -101,6 +103,7 @@
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script>
+      new WOW().init();
    $(document).ready(function() {
     Materialize.updateTextFields();
     $('select').material_select();

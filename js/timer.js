@@ -23,7 +23,7 @@ document.getElementById("hours").innerHTML= hours + "h" ;
 document.getElementById("minutes").innerHTML= minutes + "m";
 document.getElementById("seconds").innerHTML = seconds + "s";
 if(!timeLeft){
-    console.log('Started');
+   // console.log('Started');
 }
 else
 {
