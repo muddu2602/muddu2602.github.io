@@ -23,15 +23,17 @@ function submitForm(e){
     var phone = getInputVal('phoneNo');
     var email = getInputVal('email');
     var workshop = getInputVal('workshop');
+    var mode = getInputVal('paymentMode');
     
     saveMessage(name , email , phone, false , workshop);
+
 
     //Show Alert
     document.querySelector('.alert').style.display = 'block';
 
     setTimeout(function(){
         document.querySelector('.alert').style.display = 'none';
-        window.location="/";
+        window.location="/register.html";
     },3000);  
 }
 

@@ -152,7 +152,7 @@ h2:after {
 /* Cultural Night */
 
 .cultural-section {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url('../img/culturals.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url('../img/culturals.jpg');
     background-size: cover;
     color: white;
     background-attachment: fixed;
@@ -248,7 +248,7 @@ h2:after {
 } 
 
 .registerForm {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url('../img/register.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url('../img/register.jpg');
     background-size: cover;
     color: white;
     background-attachment: fixed;
@@ -379,4 +379,55 @@ h2:after {
     video{
         height: 662px;
     }
+}
+
+.imgBorder{
+    border-radius: 50%;
+    height: 60px;
+    margin-left: 5px;
+    border: 2px solid #fff;
+}
+
+.pop{
+    height: 500px;
+}
+
+.footer{
+    padding: 30px;
+    color: #cccccc;
+    background-color: #222222;
+  }
+
+.footer .social{
+    font-size: 20px;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #cccccc;
+    margin-bottom: 10px;
+    margin-right: 5px;
+  
+  }
+  
+  .footer input{
+    height: 40px;
+    width: 160px;
+    padding:5px;
+    border: none;
+    background-color: #cccccc;
+    color: #000;
+  }
+  .footer .btn{
+    padding: 10px 5px 10px;
+    margin: -3px 0 0 5px;
+  
+  }
+  
+  .details{
+      color: #000;
+      word-spacing: 3px;
+  }
+  .decorate{
+      text-decoration-color: #000;
 }
