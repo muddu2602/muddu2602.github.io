@@ -60,6 +60,7 @@ app.controller("registerController", function($scope, $firebaseArray) {
     // download the data into a local object
     $scope.data = $firebaseArray(ref);
     $scope.totalAttendees=0;
+    console.log('In Controller');
     // var root = firebase.database().ref().child('users');
     // root.on('child_added', function(snapshot) {
     //   $scope.data.push(snapshot.val());
