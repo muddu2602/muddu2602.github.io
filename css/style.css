@@ -3,7 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+html,body{
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
 html {
     background-color: #fff;
     color: #555;
@@ -436,9 +440,22 @@ h2:after {
 #overlay{
     height:100%;
     width:100%;
-    background: rgba(14, 252, 151, 0.62);
-    position: fixed;
-    left:0;
-    top:0; 
+    background: #fff;
+    position: absolute; 
     z-index: 9999;
+    align-content: center;
+}
+
+.adjustspin{
+    position: relative;
+    margin-left:750px; 
+    margin-top: 300px;
+    margin-bottom: -300px;
+}
+.adjust-text{
+
+    position: relative;
+    margin-top: 250px;
+    margin-left: 650px;
+    margin-bottom: -250px;
 }
