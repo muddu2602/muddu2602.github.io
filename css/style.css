@@ -236,6 +236,15 @@ h2:after {
    .header-bottom{
        margin-top: -40px;
    }
+
+   @media(max-width:768px){
+    .nav-adjust{
+        z-index: 3;
+        margin-top: 30px;
+
+    }
+
+   }  
 @media(max-width:768px){
     /*.header-content li{
         margin-bottom: 10px;
@@ -446,16 +455,6 @@ h2:after {
     align-content: center;
 }
 
-.adjustspin{
-    position: relative;
-    margin-left:750px; 
-    margin-top: 300px;
-    margin-bottom: -300px;
-}
-.adjust-text{
-
-    position: relative;
-    margin-top: 250px;
-    margin-left: 650px;
-    margin-bottom: -250px;
+.adjust-loader{
+    margin-top: 270px;
 }
