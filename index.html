@@ -11,7 +11,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/animate.css">
-    <link rel="stylesheet" href="./css/icono.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Courgette|Kaushan+Script" rel="stylesheet">
 </head>
@@ -575,24 +574,17 @@
         function load(){
                 var overlay = document.getElementById('overlay');
                 window.addEventListener('load', function(){
-                console.log('loaded');
                 overlay.style.display = 'none';
                 document.querySelector('.display').style.display = 'block';
-        });
-    }
-
-
+             });
+        }
         $(document).ready(function() {
              //Preloader
             $('.modal').modal();    
             $(".button-collapse").sideNav();
             $('.dropdown-button').dropdown('open');
-            setTimeout( load() , 5000);
-            
-
+            setTimeout( load() , 5000);    
         });
-
-
         function initMap() {
             //Map Options
             var options = {
@@ -604,7 +596,6 @@
             }
             //Add New Map
             var map = new google.maps.Map(document.getElementById('map'), options);
-
             //Add Marker
             var marker = new google.maps.Marker({
                 position: {
