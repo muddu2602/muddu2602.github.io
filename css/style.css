@@ -466,3 +466,7 @@ h2:after {
         width:100%;
     }
 }
+
+.display{
+ display: none;
+}

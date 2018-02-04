@@ -71,7 +71,8 @@
                     </div>
         </div>
             
-            </div>           
+            </div>   
+    <div class="display">
     <div class="fixed-action-btn  ">
         <a class="btn-floating btn-large teal ">
                   <i class="large material-icons wow swing" data-wow-iteration="infinite">access_time</i>
@@ -561,6 +562,8 @@
               </div>
           </div>
 
+        </div>
+
     <script src="js/wow.min.js"></script>
     <script src="js/timer.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -574,6 +577,7 @@
                 window.addEventListener('load', function(){
                 console.log('loaded');
                 overlay.style.display = 'none';
+                document.querySelector('.display').style.display = 'block';
         });
     }
 
@@ -584,6 +588,7 @@
             $(".button-collapse").sideNav();
             $('.dropdown-button').dropdown('open');
             setTimeout( load() , 5000);
+            
 
         });
 
