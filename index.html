@@ -20,22 +20,22 @@
         <div style="margin-top:140px;">
                 <div class="row">
                         <div class="col s2 m2 l2">
-                                <img class="responsive-img wow rotateIn pulse" data-wow-delay="0.5s" style="padding-left:60px;margin-top:60px;" src="./img/chrome.png" alt="">
+                                <img class="responsive-img wow rotateIn pulse size" data-wow-delay="0.5s" style="padding-left:60px;margin-top:60px;" src="./img/chrome.png" alt="">
                         </div>
                         <div class="col s2 m2 l2">
-                                <img class="responsive-img wow flipInY pulse" data-wow-delay="1.0s"  style="padding-left:60px;margin-top:35px;" src="./img/facebook.png" alt="">
+                                <img class="responsive-img wow flipInY pulse size" data-wow-delay="1.0s"  style="padding-left:60px;margin-top:35px;" src="./img/facebook.png" alt="">
                         </div>
                         <div class="col s2 m2 l2">
-                                <img class="responsive-img wow bounceInUp pulse" data-wow-delay="1.5s"  style="padding-left:60px;" src="./img/hike.png" alt="">
+                                <img class="responsive-img wow bounceInUp pulse size" data-wow-delay="1.5s"  style="padding-left:60px;" src="./img/hike.png" alt="">
                         </div>
                         <div class="col s2 m2 l2">
-                                <img class="responsive-img wow lightSpeedIn pulse" data-wow-delay="2.0s"  style="padding-left:60px;" src="./img/whatsApp.png" alt="">
+                                <img class="responsive-img wow lightSpeedIn pulse size" data-wow-delay="2.0s"  style="padding-left:60px;" src="./img/whatsApp.png" alt="">
                         </div>
                         <div class="col s2 m2 l2">
-                                <img class="responsive-img wow flipOutX pulse" data-wow-delay="2.5s"  style="padding-left:60px;margin-top:35px;" src="./img/instagram.png" alt="">
+                                <img class="responsive-img wow flipOutX pulse size" data-wow-delay="2.5s"  style="padding-left:60px;margin-top:35px;" src="./img/instagram.png" alt="">
                         </div>
                         <div class="col s2 m2 l2">
-                                <img class="responsive-img wow jackInTheBox pulse" data-wow-delay="3.0s"  style="padding-left:60px; margin-top:60px;" src="./img/pinterest.png" alt="">
+                                <img class="responsive-img wow jackInTheBox pulse size" data-wow-delay="3.0s"  style="padding-left:60px; margin-top:60px;" src="./img/pinterest.png" alt="">
                         </div>
                     </div>
                     <div class="row">
@@ -51,22 +51,22 @@
                     <div class="row" style="padding-top:30px;"></div>
                     <div class="row">
                             <div class="col s2 m2 l2">
-                                    <img class="responsive-img wow bounce pulse" data-wow-delay="3.5s"  style="padding-left:60px;margin-top:-60px;" src="./img/firebase.png" alt="">
+                                    <img class="responsive-img wow bounce pulse size" data-wow-delay="3.5s"  style="padding-left:60px;margin-top:-60px;" src="./img/firebase.png" alt="">
                             </div>
                             <div class="col s2 m2 l2">
-                                    <img class="responsive-img wow zoomInLeft pulse" data-wow-delay="4.0s"  style="padding-left:60px;margin-top:-45px;" src="./img/angular.png" alt="">
+                                    <img class="responsive-img wow zoomInLeft pulse size" data-wow-delay="4.0s"  style="padding-left:60px;margin-top:-45px;" src="./img/angular.png" alt="">
                             </div>
                             <div class="col s2 m2 l2">
-                                    <img class="responsive-img wow flipInX pulse" data-wow-delay="4.5s"  style="padding-left:60px;" src="./img/linkedIn.png" alt="">
+                                    <img class="responsive-img wow flipInX pulse size" data-wow-delay="4.5s"  style="padding-left:60px;" src="./img/linkedIn.png" alt="">
                             </div>
                             <div class="col s2 m2 l2">
                                     <img class="responsive-img wow slideInLeft pulse" data-wow-delay="5.0s"  style="padding-left:60px;" src="./img/github.png" alt="">
                             </div>
                             <div class="col s2 m2 l2">
-                                    <img class="responsive-img wow rollIn pulse" data-wow-delay="5.5s"  style="padding-left:60px;margin-top:-45px;" src="./img/youtube.png" alt="">
+                                    <img class="responsive-img wow rollIn pulse size" data-wow-delay="5.5s"  style="padding-left:60px;margin-top:-45px;" src="./img/youtube.png" alt="">
                             </div>
                             <div class="col s2 m2 l2">
-                                    <img class="responsive-img wow slideInRight pulse" data-wow-delay="6.0s"  style="padding-left:60px;margin-top:-60px;" src="./img/twitter.png" alt="">
+                                    <img class="responsive-img wow slideInRight pulse size" data-wow-delay="6.0s"  style="padding-left:60px;margin-top:-60px;" src="./img/twitter.png" alt="">
                             </div>
                     </div>
         </div>
@@ -568,18 +568,22 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQYV2zUVzmiASJ6ttLCwYBOMlhRS710yo&callback=initMap" async defer></script>
     <script>
         new WOW().init();
-        var overlay = document.getElementById('overlay');
+        
+        function load(){
+                var overlay = document.getElementById('overlay');
                 window.addEventListener('load', function(){
+                console.log('loaded');
                 overlay.style.display = 'none';
-            });  
+        });
+    }
 
 
         $(document).ready(function() {
              //Preloader
-            $('.modal').modal();
+            $('.modal').modal();    
             $(".button-collapse").sideNav();
             $('.dropdown-button').dropdown('open');
-           
+            setTimeout( load() , 5000);
 
         });
 
