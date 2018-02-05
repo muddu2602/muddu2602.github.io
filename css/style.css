@@ -216,7 +216,7 @@ h2:after {
     position:absolute;
     top:0;
     left:0;
-    background:#222222;
+    background:teal;
     opacity: 0.55;
 }
 .header-content{
