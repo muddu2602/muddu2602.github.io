@@ -24,7 +24,7 @@
                     <div class="input-field col s12">
                         <select id="workshop">
                           <option value="ETH" style="color:#000" selected>Ethical Hacking</option>
-                          <option value="IBM" style="color:#000" >Machine Learning</option>
+                          <option value="ML" style="color:#000" >Machine Learning</option>
                         </select>
                         <label>Workshop</label>
                       </div>
@@ -37,7 +37,7 @@
                   </div>
                   <div class="row">
                     <div class="input-field form-control col s12 l12 m12">
-                      <input id="phoneNo" type="number" max="10" class="validate" required>
+                      <input id="phoneNo" type="number" max="9999999999" class="validate" required>
                       <label for="phoneNo"><i class="material-icons">phone</i>Phone</label>
                     </div>
                   </div>
@@ -50,7 +50,6 @@
                   <div class="row">
                       <div class="input-field col s12">
                           <select id="paymentMode">
-
                             <option onclick="popPaytm()" value="paytm" style="color:#000" selected>Paytm</option>
                             <option onclick="popPhonePe()" value="phonePe" style="color:#000" >Phone Pe</option>
                             <option onclick="popTez()" value="tez" style="color:#000" >Google Tez</option>
@@ -59,12 +58,11 @@
                           <img onclick="popPhonePe()" id="phonePePopUp" class="imgBorder wow slideInUp" data-wow-delay="0.2s" src="./img/phonePe.png" alt="">
                           <img onclick="popTez()" id="tezPopUp" class="imgBorder wow slideInUp" data-wow-delay="0.4s"  src="./img/tez.png" alt="">
                           <img onclick="popPaytm()" id="paytmPopUp" class="imgBorder wow slideInUp" data-wow-delay="0.6s"src="./img/paytm.png" alt="">
-
                         </div>
                   </div>
                   <div class="row">
                     <div class="input-field col s12 m12 l12">
-                      <input id="trId" type="email" class="validate" required>
+                      <input id="trId" type="text" class="validate" required>
                       <label for="trId" data-error="" data-success="" required><i class="material-icons">payment</i>Transaction Id</label>
                     </div>
                   </div> 
@@ -89,8 +87,8 @@
     <div class="container">
       <h2>List Of Attendees</h2>
      <p>Total number of attendees <b> {{totalAttendees}}</b> </p>  <br>
-      <p>Ethical Hacker Attendees <b>{{ehAttendees}}</b> </p>  <br>
-      <p> Ibm Attendees <b>{{ibmAttendees}}</b> </p> 
+      <p>Ethical Hacking Attendees <b>{{ehAttendees}}</b> </p>  <br>
+      <p> Machine Learning Attendees <b>{{mlAttendees}}</b> </p> 
       <div class="row">
         <div class=" input-field  col s5 l3 m3 offset-s7 offset-m9 offset-l9">
           <input name="search" style="color:#000" ng-model="search" type="text">
@@ -101,18 +99,20 @@
             <thead>
               <tr>
                   <th>Name</th>
-                  <th>Email</th>
                   <th>Workshop</th>
+                  <th>Transaction ID</th>
                   <th>Payment Status</th>
+                  <th>Registration ID</th>
               </tr>
             </thead>
             <tbody>
               <tr ng-repeat ="user in data | filter : search">
-                <td>{{user.name}}</td>
-                <td>{{user.email}}</td>
+                <td>{{user.name}}</td>                
                 <td>{{user.workshop}}</td>
+                <td>{{user.trId}}</td>
                 <td ng-if="user.status">verified</td>
                 <td ng-if="!user.status">Pending....</td>
+                <td >{{user.RegId}}</td>
               </tr>
             </tbody>
           </table>

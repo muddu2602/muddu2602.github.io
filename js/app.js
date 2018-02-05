@@ -11,8 +11,6 @@
   firebase.initializeApp(config);
   //reference messages collection
   var user = firebase.database().ref('users');
-
-
   //Listen for Form Details
 document.getElementById('registerFormItyukta').addEventListener('submit' , submitForm);
 //Submit Form
@@ -24,34 +22,36 @@ function submitForm(e){
     var email = getInputVal('email');
     var workshop = getInputVal('workshop');
     var mode = getInputVal('paymentMode');
-    
-    saveMessage(name , email , phone, false , workshop);
+    var trId = getInputVal('trId');
+    saveMessage(name , email , phone, false , workshop , mode , trId , workshop);
 
 
     //Show Alert
     document.querySelector('.alert').style.display = 'block';
-
+    var countForEth = 0;
+    var countForMl = 0;
     setTimeout(function(){
         document.querySelector('.alert').style.display = 'none';
         window.location="/register.html";
-    },3000);  
+    },4000);  
 }
 
 //Function to get Form Values
 function getInputVal(id){
     return document.getElementById(id).value;
 }
-
 //Save messges to database
-
-function saveMessage(name , email , phone, status, workshop){
+function saveMessage(name , email , phone, status, workshop, mode , trId , RegId){
     var newMessageRef = user.push();
     newMessageRef.set({
         name:name,
         email:email,
         phone:phone,
         status,
-        workshop: workshop
+        workshop: workshop,
+        trId:trId,
+        mode:mode,
+        RegId:'IT_'+RegId+'_'
     });
 }
 var app = angular.module("register", ["firebase"]); 
@@ -69,13 +69,18 @@ app.controller("registerController", function($scope, $firebaseArray) {
     $scope.data.$loaded().then(function() {
         $scope.totalAttendees=$scope.data.length
         $scope.ehAttendees=0
-        $scope.ibmAttendees=0;
+        $scope.mlAttendees=0;
+        
          // To iterate the key/value pairs of the object, use angular.forEach()
        angular.forEach($scope.data, function(value, key) {
-            if(value.workshop == 'ETH' && value.status)
-            $scope.ehAttendees++
-          if(value.workshop == 'IBM' && value.status)
-            $scope.ibmAttendees++
+            if(value.workshop == 'ETH' && value.status){
+                $scope.ehAttendees++;
+                countForEth++;
+            }
+           
+          if(value.workshop == 'ML' && value.status)
+            $scope.mlAttendees++
+            countForMl++;
        });
      });
 });
