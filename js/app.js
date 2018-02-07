@@ -24,8 +24,7 @@ function submitForm(e){
     var mode = getInputVal('paymentMode');
     var trId = getInputVal('trId');
     saveMessage(name , email , phone, false , workshop , mode , trId , workshop);
-
-
+    
     //Show Alert
     document.querySelector('.alert').style.display = 'block';
     var countForEth = 0;
@@ -73,7 +72,7 @@ app.controller("registerController", function($scope, $firebaseArray) {
         
          // To iterate the key/value pairs of the object, use angular.forEach()
        angular.forEach($scope.data, function(value, key) {
-            if(value.workshop == 'ETH' && value.status){
+            if(value.workshop == 'EH' && value.status){
                 $scope.ehAttendees++;
                 countForEth++;
             }
