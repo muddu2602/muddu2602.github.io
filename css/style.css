@@ -45,7 +45,65 @@ header {
     background-attachment: fixed;
     background-position: center;
 }
+.main-nav {
+    margin-top: 50px;
+    float: right;
+    list-style: none;
+}
 
+.main-nav li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 8px 0px;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 100%;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #fff;
+}
+
+.fullscreen-video-wrap{
+    position: absolute;
+    top: 0;
+    left:0;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+}
+
+.fullscreen-video-wrap video{
+    min-width: 100%;
+    min-height: 100%;
+    zoom: 80%;
+}
+
+.header-overlay{
+    height: 100vh;
+    width:100vw;
+    position:absolute;
+    top:0;
+    left:0;
+    background:teal;
+    opacity: 0.55;
+}
+.header-content{
+    z-index: 2;
+    margin-top: -100px;
+}
+.header-content li{
+    margin-bottom: 50px;
+}
 #adjust {
     position: absolute;
     margin-left: 10px;
@@ -139,7 +197,6 @@ h2:after {
     height: 250px;
     border-radius: 50%;
 }
-
 
 /*Find Us Map */
 
@@ -380,4 +437,82 @@ h2:after {
     line-height: 2rem;
     
 
+}
+
+.main-nav {
+    margin-top: 100px;
+    float: right;
+    list-style: none;
+}
+
+.main-nav li {
+    display: inline;
+    margin-left: 20px;
+    font-size: 20px;
+    
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 8px 0px;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 100%;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #fff;
+}
+.fullscreen-video-wrap{
+    position: absolute;
+    top: 0;
+    left:0;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+}
+
+.fullscreen-video-wrap video{
+    min-width: 100%;
+    min-height: 100%;
+    zoom: 80%;
+}
+
+.header-overlay{
+    height: 100vh;
+    width:100vw;
+    position:absolute;
+    top:0;
+    left:0;
+    background:teal;
+    opacity: 0.55;
+}
+.header-content{
+    position: relative;
+    z-index: 2;
+}
+@media  only screen and (max-width:821px){
+    .main-nav li{
+        margin-top:40px;
+        font-size:15px;
+        margin-left:10px;
+    }
+    .adjust-head{
+        font-size:70px;
+    }
+}
+@media  only screen and (max-width:584px){
+    .main-nav li{
+        margin-top:40px;
+        font-size:13px;
+        margin-left:8px;
+    }
+    .adjust-head{
+        font-size:53px;
+    }
 }
