@@ -493,6 +493,7 @@ h2:after {
     opacity: 0.55;
 }
 .header-content{
+    margin-left:170px;
     position: relative;
     z-index: 2;
 }
@@ -512,7 +513,13 @@ h2:after {
         font-size:13px;
         margin-left:8px;
     }
+    .header-content{
+        margin-left:0px;
+    }
     .adjust-head{
         font-size:53px;
+    }
+    .header-content{
+        margin-left:0px;
     }
 }
