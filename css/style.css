@@ -506,6 +506,9 @@ h2:after {
     .adjust-head{
         font-size:70px;
     }
+    .adjust-loading-header{
+        font-size:78px;
+    }
 }
 @media  only screen and (max-width:584px){
     .main-nav li{
@@ -521,5 +524,8 @@ h2:after {
     }
     .header-content{
         margin-left:0px;
+    }
+    .adjust-loading-header{
+        font-size:60px;
     }
 }

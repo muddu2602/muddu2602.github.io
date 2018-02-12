@@ -23,7 +23,8 @@ function submitForm(e){
     var workshop = getInputVal('workshop');
     var mode = getInputVal('paymentMode');
     var trId = getInputVal('trId');
-    saveMessage(name , email , phone, false , workshop , mode , trId , workshop);
+    var college = getInputVal('college');
+    saveMessage(name , email , phone, false , workshop , mode , trId , workshop,college);
     
     //Show Alert
     document.querySelector('.alert').style.display = 'block';
@@ -40,7 +41,7 @@ function getInputVal(id){
     return document.getElementById(id).value;
 }
 //Save messges to database
-function saveMessage(name , email , phone, status, workshop, mode , trId , RegId){
+function saveMessage(name , email , phone, status, workshop, mode , trId , RegId,college){
     var newMessageRef = user.push();
     newMessageRef.set({
         name:name,
@@ -50,7 +51,8 @@ function saveMessage(name , email , phone, status, workshop, mode , trId , RegId
         workshop: workshop,
         trId:trId,
         mode:mode,
-        RegId:'IT_'+RegId+'_'
+        RegId:'IT_'+RegId+'_',
+        college:college
     });
 }
 var app = angular.module("register", ["firebase"]); 
