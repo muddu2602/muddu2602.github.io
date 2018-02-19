@@ -89,12 +89,12 @@
           </div>
         </div>
   </section>
-  <section style="display:none;" class="section-list">
+  <section  class="section-list">
     <div class="container">
       <h2>List Of Attendees</h2>
-     <p>Total number of attendees <b> {{totalAttendees}}</b> </p>  <br>
+     <!-- <p>Total number of attendees <b> {{totalAttendees}}</b> </p>  <br>
       <p>Ethical Hacking Attendees <b>{{ehAttendees}}</b> </p>  <br>
-      <p> Machine Learning Attendees <b>{{mlAttendees}}</b> </p> 
+      <p> Machine Learning Attendees <b>{{mlAttendees}}</b> </p>  -->
       <div class="row">
         <div class=" input-field  col s5 l3 m3 offset-s7 offset-m9 offset-l9">
           <input name="search" style="color:#000" ng-model="search" type="text">
@@ -106,19 +106,15 @@
               <tr>
                   <th>Name</th>
                   <th>Workshop</th>
-                  <th>Transaction ID</th>
                   <th>Payment Status</th>
-                  <th>Registration ID</th>
               </tr>
             </thead>
             <tbody>
               <tr ng-repeat ="user in data | filter : search">
                 <td>{{user.name}}</td>                
                 <td>{{user.workshop}}</td>
-                <td>{{user.trId}}</td>
                 <td ng-if="user.status">verified</td>
                 <td ng-if="!user.status">Pending....</td>
-                <td >{{user.RegId}}</td>
               </tr>
             </tbody>
           </table>

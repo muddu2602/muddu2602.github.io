@@ -314,6 +314,9 @@ h2:after {
     background:#fff;
 
 }
+.adjust-copyrights{
+    padding-left:40px;
+}
 
 @media only screen and(max-width:768px){
     #days  {
@@ -353,6 +356,9 @@ h2:after {
 @media only screen and(max-width:768px){
     video{
         height: 662px;
+    }
+    .adjust-copyrights{
+        padding-left:40px;
     }
 }
 
@@ -529,3 +535,11 @@ h2:after {
         font-size:60px;
     }
 }
+
+.test {
+    width:60%;
+    display:inline;
+    overflow: auto;
+    white-space: nowrap;
+    margin:0px auto;
+  }

@@ -24,7 +24,7 @@ function submitForm(e){
     var mode = getInputVal('paymentMode');
     var trId = getInputVal('trId');
     var college = getInputVal('college');
-    saveMessage(name , email , phone, false , workshop , mode , trId , workshop,college);
+    saveMessage(name , email , phone, false , workshop , mode , trId ,college);
     
     //Show Alert
     document.querySelector('.alert').style.display = 'block';
@@ -32,7 +32,7 @@ function submitForm(e){
     var countForMl = 0;
     setTimeout(function(){
         document.querySelector('.alert').style.display = 'none';
-        window.location="/register.html";
+        window.location="/";
     },4000);  
 }
 
@@ -41,7 +41,7 @@ function getInputVal(id){
     return document.getElementById(id).value;
 }
 //Save messges to database
-function saveMessage(name , email , phone, status, workshop, mode , trId , RegId,college){
+function saveMessage(name , email , phone, status, workshop, mode , trId ,college){
     var newMessageRef = user.push();
     newMessageRef.set({
         name:name,
@@ -51,7 +51,6 @@ function saveMessage(name , email , phone, status, workshop, mode , trId , RegId
         workshop: workshop,
         trId:trId,
         mode:mode,
-        RegId:'IT_'+RegId+'_',
         college:college
     });
 }
@@ -71,14 +70,12 @@ app.controller("registerController", function($scope, $firebaseArray) {
         $scope.totalAttendees=$scope.data.length
         $scope.ehAttendees=0
         $scope.mlAttendees=0;
-        
          // To iterate the key/value pairs of the object, use angular.forEach()
        angular.forEach($scope.data, function(value, key) {
             if(value.workshop == 'EH' && value.status){
                 $scope.ehAttendees++;
                 countForEth++;
             }
-           
           if(value.workshop == 'ML' && value.status)
             $scope.mlAttendees++
             countForMl++;
