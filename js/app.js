@@ -28,12 +28,12 @@ function submitForm(e){
     
     //Show Alert
     document.querySelector('.alert').style.display = 'block';
-    var countForEth = 0;
-    var countForMl = 0;
+    // var countForEth = 0;
+    // var countForMl = 0;
     setTimeout(function(){
         document.querySelector('.alert').style.display = 'none';
         window.location="/";
-    },4000);  
+    },6000);  
 }
 
 //Function to get Form Values
@@ -74,11 +74,11 @@ app.controller("registerController", function($scope, $firebaseArray) {
        angular.forEach($scope.data, function(value, key) {
             if(value.workshop == 'EH' && value.status){
                 $scope.ehAttendees++;
-                countForEth++;
+                
             }
           if(value.workshop == 'ML' && value.status)
             $scope.mlAttendees++
-            countForMl++;
+            
        });
      });
 });
