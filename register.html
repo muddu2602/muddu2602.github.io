@@ -55,9 +55,10 @@
                   <div class="row">
                       <div class="input-field col s12">
                           <select id="paymentMode">
-                            <option onclick="popPaytm()" value="paytm" style="color:#000" selected>Paytm</option>
-                            <option onclick="popPhonePe()" value="phonePe" style="color:#000" >Phone Pe</option>
-                            <option onclick="popTez()" value="tez" style="color:#000" >Google Tez</option>
+                           
+                            <option onclick="popPhonePe()" value="phonePe" style="color:#000" selected>Phone Pe</option>
+                            <option onclick="popTez()" value="tez" style="color:#000"  >Google Tez</option>
+                            <option onclick="popPaytm()" value="paytm" style="color:#000" >Paytm</option>
                           </select>
                           <label>Payment Mode</label>
                           <img onclick="popPhonePe()" id="phonePePopUp" class="imgBorder wow slideInUp" data-wow-delay="0.2s" src="./img/phonePe.png" alt="">
@@ -128,8 +129,8 @@
           Materialize.updateTextFields();
           $('select').material_select();
           $('.modal').modal();
-          document.querySelector('#imgPaytm').style.display = 'paytm';
-          document.querySelector('#imgPhonePe').style.display = 'none';
+          document.querySelector('#imgPaytm').style.display = 'none';
+          document.querySelector('#imgPhonePe').style.display = 'block';
           document.querySelector('#imgTez').style.display = 'none';
         });
         new WOW().init();
