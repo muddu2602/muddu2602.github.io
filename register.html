@@ -17,7 +17,6 @@
   <section class="registerForm">
       <div class="row">
           <h2>register</h2>
-          <div class="alert wow bounceInUp">Registered Successfully</div>
           <div class="col s12 m8 l8">
               <form id="registerFormItyukta" class="col s12">
                 <div class="row">
@@ -80,6 +79,8 @@
                       <a style="margin-left:20px;font-weight:600" class="waves-effect waves-light btn modal-trigger" href="#modal1">T & C</a>
                     </div>
                   </div>
+                  <div class="alert wow bounceInUp"><b>Registered Successfully</b>...<br>Confirmation Mail Will Be Sent Within 24 Hours...</div>
+                  <div class="alert wow bounceInUp"></div>
                 </form>
           </div>
           <div class="col s12 m4 l4">
@@ -111,8 +112,8 @@
             </thead>
             <tbody>
               <tr ng-repeat ="user in data | filter : search">
-                <td>{{user.name}}</td>                
-                <td>{{user.workshop}}</td>
+                <td ng-if="user.status">{{user.name}}</td>                
+                <td ng-if="user.status">{{user.workshop}}</td>
                 <td ng-if="user.status">verified</td>
                 <td ng-if="!user.status">Pending....</td>
               </tr>

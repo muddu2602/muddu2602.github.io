@@ -25,7 +25,6 @@ function submitForm(e){
     var trId = getInputVal('trId');
     var college = getInputVal('college');
     saveMessage(name , email , phone, false , workshop , mode , trId ,college);
-    
     //Show Alert
     document.querySelector('.alert').style.display = 'block';
     // var countForEth = 0;
@@ -33,7 +32,7 @@ function submitForm(e){
     setTimeout(function(){
         document.querySelector('.alert').style.display = 'none';
         window.location="/";
-    },6000);  
+    },7000);  
 }
 
 //Function to get Form Values
@@ -74,11 +73,9 @@ app.controller("registerController", function($scope, $firebaseArray) {
        angular.forEach($scope.data, function(value, key) {
             if(value.workshop == 'EH' && value.status){
                 $scope.ehAttendees++;
-                
             }
           if(value.workshop == 'ML' && value.status)
             $scope.mlAttendees++
-            
        });
      });
 });
