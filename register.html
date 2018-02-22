@@ -114,8 +114,7 @@
               <tr ng-repeat ="user in data | filter : search">
                 <td ng-if="user.status">{{user.name}}</td>                
                 <td ng-if="user.status">{{user.workshop}}</td>
-                <td ng-if="user.status">verified</td>
-                <td ng-if="!user.status">Pending....</td>
+                <td ng-if="user.status" style="color:rgb(42, 240, 15)">Verified</td>
               </tr>
             </tbody>
           </table>
