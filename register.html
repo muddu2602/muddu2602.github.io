@@ -14,7 +14,7 @@
     <script src="./js/angular.min.js"></script>
     </head>
 <body ng-app="register" ng-controller="registerController">
-  <section class="registerForm">
+  <section style="display:none" class="registerForm">
       <div class="row">
           <h2>register</h2>
           <div class="col s12 m8 l8">
@@ -55,7 +55,6 @@
                   <div class="row">
                       <div class="input-field col s12">
                           <select id="paymentMode">
-                           
                             <option onclick="popPhonePe()" value="phonePe" style="color:#000" selected>Phone Pe</option>
                             <option onclick="popTez()" value="tez" style="color:#000"  >Google Tez</option>
                             <option onclick="popPaytm()" value="paytm" style="color:#000" >Paytm</option>
@@ -90,6 +89,14 @@
               <img id="imgTez" style="border-radius:10px" class=" pop responsive-img wow fadeInUp" style="height:500px" src="./img/scanTezNew.png" alt="">
           </div>
         </div>
+  </section>
+  <section style="" class="section-closed">
+    <div class="container">
+      <h2>Registrations closed</h2>
+        <p class="">Thanks for Supporting Us a Lot....</p><br>
+        <p> On-Spot registrations for the workshops are available</p>
+    </div>
+    
   </section>
   <section class="section-list">
     <div class="container">
